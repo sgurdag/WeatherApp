@@ -1,0 +1,2 @@
+include ':app',':repository', ':core', ':features', ':features:weather_detail'
+rootProject.name='The Weather App'

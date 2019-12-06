@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/nav_weather_detail"
+	app:startDestination="@id/weatherDetailFragment">
+
+	<fragment
+		android:id="@+id/weatherDetailFragment"
+		android:name="com.sgurdag.weather_detail.ui.WeatherDetailFragment"
+		android:label="WeatherDetailFragment"
+		tools:layout="@layout/fragment_weather_detail">
+
+		<deepLink
+			android:id="@+id/weatherDetailDeepLink"
+			app:uri="@string/weather_detail_deeplink" />
+	</fragment>
+</navigation>

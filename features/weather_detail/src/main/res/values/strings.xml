@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">weather_detail</string>
+    <string name="title_wind_direction">Wind Direction:</string>
+    <string name="title_wind_speed">Wind Speed:</string>
+    <string name="title_temperature">Temperature:</string>
+    <string name="title_current_condition">Current Condition:</string>
+    <string name="title_last_update">Last Update From API:</string>
+    <string name="title_location">Location:</string>
+</resources>
