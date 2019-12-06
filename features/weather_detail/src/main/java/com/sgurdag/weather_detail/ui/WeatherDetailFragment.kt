@@ -82,7 +82,10 @@ class WeatherDetailFragment : BaseDaggerFragment<WeatherDetailBinding>(),
             if (viewModel.location.value != null)
                 viewModel.getWeatherData()
             else
-                showSnackbarWithMessageAndAction("Location couldn't be fetched", "Retry") {
+                showSnackbarWithMessageAndAction(
+                    getString(R.string.warning_locaiton_couldnt_be_fetched),
+                    getString(R.string.button_retry)
+                ) {
                     fetchLocation()
                 }
         }
@@ -131,8 +134,11 @@ class WeatherDetailFragment : BaseDaggerFragment<WeatherDetailBinding>(),
                     listenLastKnownLocation()
                 else -> {
                     // Permission denied.
-                    showSnackbarWithMessageAndAction("Location permission is needed", "Retry") {
-                        fetchLocation()
+                    showSnackbarWithMessageAndAction(
+                        getString(R.string.warning_location_permission_needed),
+                        getString(R.string.button_settings)
+                    ) {
+                        startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
                     }
                 }
             }
@@ -178,10 +184,10 @@ class WeatherDetailFragment : BaseDaggerFragment<WeatherDetailBinding>(),
 
                             progress(false)
                             showSnackbarWithMessageAndAction(
-                                "Location couldn't be fetched",
-                                "Settings"
+                                getString(R.string.warning_locaiton_couldnt_be_fetched),
+                                getString(R.string.button_retry)
                             ) {
-                                startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                                fetchLocation()
                             }
                         }
                     }
